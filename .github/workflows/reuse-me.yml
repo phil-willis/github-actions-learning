@@ -11,8 +11,11 @@ on:
         type: string
 jobs:
   setup:
+    env:
+      hello_message_as_env: ${{ inputs.hello_message }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
       - run: echo "input value passed in => ( ${{ inputs.hello_message }})"
+      - run: echo "input as environment variable  $hello_message_as_env"
       - run: echo "secret value passed in => ( ${{ secrets.SOME_SECRET }}), this should actually mask the actual secrete"
