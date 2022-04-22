@@ -1,14 +1,14 @@
 name: Setup
 on:
   workflow_call:
-  secrets:
-    SOME_SECRET:
-      required: true
-  inputs:
-    hello_message:
-      required: true
-      description: "A message to be passed in"
-      type: string
+    secrets:
+      SOME_SECRET:
+        required: true
+    inputs:
+      hello_message:
+        required: true
+        description: "A message to be passed in"
+        type: string
 jobs:
   setup:
     runs-on: ubuntu-latest
