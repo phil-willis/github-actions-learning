@@ -1,0 +1,13 @@
+name: Uses reusable workflows
+on:
+  push:
+    branches:
+      - main
+jobs:
+  do_something:
+    needs: setup
+    uses: ./.github/workflows/reuse-me.yml
+    secrets:
+      SOME_SECRET: ${{ secrets.SECRET_IN_YOU_REPO_SETTINGS }}
+    with:
+      hello_message: this rocks!!
