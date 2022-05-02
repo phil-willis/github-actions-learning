@@ -1,7 +1,7 @@
 name: Uses reusable workflows
 on:
   push:
-    branches:
+    branches-ignore:
       - main
 jobs:
   do_something:
