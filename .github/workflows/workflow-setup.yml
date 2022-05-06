@@ -1,0 +1,14 @@
+name: simple workflow
+on:
+  workflow_call:
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # - name: Setup node 12
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12.x
+      - name: node verions
+        run: NODE_VERSION=$(node -v) echo $NODE_VERSION
