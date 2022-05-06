@@ -1,14 +1,17 @@
 name: simple workflow
 on:
   workflow_call:
+    inputs:
+      node-version:
+        default: 12.x
 jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # - name: Setup node 12
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: 12.x
+      - name: Setup node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ inputs.node-version }}
       - name: node verions
         run: NODE_VERSION=$(node -v) echo "Using node -> $NODE_VERSION"
