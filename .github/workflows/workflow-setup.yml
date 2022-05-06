@@ -11,4 +11,4 @@ jobs:
       #   with:
       #     node-version: 12.x
       - name: node verions
-        run: NODE_VERSION=$(node -v) echo $NODE_VERSION
+        run: NODE_VERSION=$(node -v) echo "Using node -> $NODE_VERSION"
