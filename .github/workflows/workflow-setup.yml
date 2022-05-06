@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Setup node 12
         uses: actions/setup-node@v1
-        with:
-          node-version: ${{ inputs.node-version }}
+          with:
+            node-version: ${{ inputs.node-version }}
       - name: node verions
         run: NODE_VERSION=$(node -v) echo "Using node -> $NODE_VERSION"
